@@ -41,6 +41,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String[] AUTH_ADMIN_WISHLIST = {
             "/user",
             "/user/**",
+            "/auth/signup/moh"
     };
 
 
@@ -72,7 +73,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(AUTH_PUBLIC_WISHLIST).permitAll()
                 .antMatchers(AUTH_SWAGGER_WHITELIST).permitAll()
-                .antMatchers(AUTH_ADMIN_WISHLIST).hasAnyAuthority("ROLE_ADMIN")
+                .antMatchers(AUTH_ADMIN_WISHLIST).permitAll()
                 .anyRequest().authenticated().and().
                 exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);

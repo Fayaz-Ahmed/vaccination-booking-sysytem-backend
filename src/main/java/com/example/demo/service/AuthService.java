@@ -14,5 +14,5 @@ public interface AuthService {
 
     ResponseEntity<Response<UserDto>> saveUser(UserRequest userRequest) throws ChartVException;
 
-//    ResponseEntity<Response<MohDto>> saveMoh(MohRequest mohRequest) throws ChartVException;
+    ResponseEntity<Response<MohDto>> saveMoh(MohRequest mohRequest) throws ChartVException;
 }

@@ -4,18 +4,18 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Entity
 @Data
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 public class Gs extends User {
-    @Id
-    @GeneratedValue
-    private int gsid;
+
     @NotBlank
     private String location;
     @NotBlank

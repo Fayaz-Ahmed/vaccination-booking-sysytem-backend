@@ -1,21 +1,20 @@
 package com.example.demo.entity;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = "mohdivision") })
 @Data
-@Builder
-@AllArgsConstructor
+@SuperBuilder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Moh extends User {
-    @Id
-    @GeneratedValue
-    private int mohid;
+
     @NotBlank
     private String mohdivision;
 
@@ -24,5 +23,4 @@ public class Moh extends User {
 
     @NotBlank
     private String location;
-
 }

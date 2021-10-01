@@ -4,6 +4,9 @@ import com.example.demo.entity.*;
 import com.example.demo.response.dto.*;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Component
 public class EntityToDtoMapper {
 
@@ -18,7 +21,6 @@ public class EntityToDtoMapper {
 
     public MohDto convertMohDto(Moh moh) {
         return MohDto.builder()
-                .mohid(moh.getMohid())
                 .username(moh.getUsername())
                 .password(moh.getPassword())
                 .email(moh.getEmail())
